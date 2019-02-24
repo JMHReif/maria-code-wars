@@ -20,8 +20,6 @@ public class OrderController {
         return orderService.findByOrderId(orderId);
     }
 
-//    @GetMapping("/findbyorderidlike")
-//    public Iterable<Order> findByOrderIdLike(@RequestParam Long orderId) {
-//        return orderService.findByOrderIdLike(orderId);
-//    }
+    @GetMapping("/findordersbyproduct")
+    public Iterable<Order> findOrdersByOrderedProductsContaining(@RequestParam String productName) { return orderService.findOrdersByOrderedProductsContaining(productName); }
 }

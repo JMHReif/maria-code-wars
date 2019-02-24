@@ -12,5 +12,5 @@ public class OrderService {
 
     public Order findByOrderId(Long orderId) { return orderRepo.findByOrderId(orderId); }
 
-//    public Iterable<Order> findByOrderIdLike(Long orderId) { return orderRepo.findByOrOrderIdLike(orderId); }
+    public Iterable<Order> findOrdersByOrderedProductsContaining(String productName) { return orderRepo.findOrdersByOrderedProductsContaining(productName); }
 }
