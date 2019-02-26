@@ -10,7 +10,7 @@ public class OrderService {
 
     public Iterable<Order> findAllOrders() { return orderRepo.findAll(); }
 
-    public Order findByOrderId(Long orderId) { return orderRepo.findByOrderId(orderId); }
+    public Order findOrderByOrderId(Long orderId) { return orderRepo.findOrderByOrderId(orderId); }
 
     public Iterable<Order> findOrdersByOrderedProductsContaining(String productName) { return orderRepo.findOrdersByOrderedProductsContaining(productName); }
 }

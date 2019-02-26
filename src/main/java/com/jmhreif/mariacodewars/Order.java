@@ -29,6 +29,6 @@ public class Order {
     private String shipName, shipAddress, shipCity, shipRegion, shipPostalCode, shipCountry;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnoreProperties("order")
+    @JsonIgnoreProperties({"order","orderId","productId"})
     private List<OrderedProduct> orderedProducts = new ArrayList<>();
 }

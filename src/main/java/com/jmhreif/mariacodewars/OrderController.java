@@ -15,9 +15,9 @@ public class OrderController {
     @GetMapping("/")
     public Iterable<Order> findAllOrders() { return orderService.findAllOrders(); }
 
-    @GetMapping("/findbyorderid")
-    public Order findByOrderId(@RequestParam Long orderId) {
-        return orderService.findByOrderId(orderId);
+    @GetMapping("/findorderbyid")
+    public Order findOrderByOrderId(@RequestParam Long orderId) {
+        return orderService.findOrderByOrderId(orderId);
     }
 
     @GetMapping("/findordersbyproduct")

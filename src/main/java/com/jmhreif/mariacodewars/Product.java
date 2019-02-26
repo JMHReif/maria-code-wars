@@ -19,10 +19,12 @@ public class Product {
 
     @Id @NonNull
     private Long productId;
-    @NonNull
-    private String productName;
+
+    private String productName, quantityPerUnit;
+    private double unitPrice;
+    private Integer unitsInStock, unitsOnOrder, reorderLevel, discontinued;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnoreProperties("product")
+    @JsonIgnoreProperties({"product","orderId","productId"})
     private List<OrderedProduct> productOrders = new ArrayList<>();
 }
