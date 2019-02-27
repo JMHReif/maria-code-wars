@@ -7,7 +7,6 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -16,15 +15,15 @@ import java.util.List;
 @Entity
 @Table(name = "products")
 public class Product {
-
     @Id @NonNull
     private Long productId;
+    @NonNull
+    private String productName;
 
-    private String productName, quantityPerUnit;
-    private double unitPrice;
+    private String quantityPerUnit;
     private Integer unitsInStock, unitsOnOrder, reorderLevel, discontinued;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnoreProperties({"product","orderId","productId"})
-    private List<OrderedProduct> productOrders = new ArrayList<>();
+    @JsonIgnoreProperties({"product", "orderId", "productId"})
+    private List<OrderedProduct> productOrders;
 }

@@ -17,18 +17,17 @@ import java.util.List;
 @Entity
 @Table(name = "orders")
 public class Order {
-
     @Id @NonNull
     private Long orderId;
 
     private String customerId;
-    private int employeeId;
+    private Integer employeeId;
     private Date orderDate, requiredDate, shippedDate;
-    private int shipVia;
-    private double freight;
     private String shipName, shipAddress, shipCity, shipRegion, shipPostalCode, shipCountry;
+    private Integer shipVia;
+    private double freight;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnoreProperties({"order","orderId","productId"})
+    @JsonIgnoreProperties({"order", "orderId", "productId"})
     private List<OrderedProduct> orderedProducts = new ArrayList<>();
 }
