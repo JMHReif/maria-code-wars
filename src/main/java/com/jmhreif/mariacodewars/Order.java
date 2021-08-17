@@ -7,7 +7,6 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -17,7 +16,8 @@ import java.util.List;
 @Entity
 @Table(name = "orders")
 public class Order {
-    @Id @NonNull
+    @Id
+    @NonNull
     private Long orderId;
 
     private String customerId;
@@ -29,5 +29,5 @@ public class Order {
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties({"order", "orderId", "productId"})
-    private List<OrderedProduct> orderedProducts = new ArrayList<>();
+    private List<OrderedProduct> orderedProducts;
 }
