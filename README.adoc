@@ -1,0 +1,13 @@
+= Maria Code Wars Application
+
+This repository accompanies the repositories listed below to connect to MariaDB running in a Docker container and query Northwind sales domain data in the database.
+
+* https://github.com/JMHReif/docker-maria[Docker container for MariaDB^]
+* https://github.com/JMHReif/code-wars-import-data-scripts[Northwind data set load scripts^]
+
+== REST endpoints
+
+* localhost:8080/orders/findbyid?orderId=10564
+* localhost:8080/orders/findbyproduct?productName=choco
+* localhost:8080/orders/findbyproduct?productName=coffee
+* localhost:8080/orders/findbyproduct?productName=chocolade
