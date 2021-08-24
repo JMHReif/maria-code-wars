@@ -5,8 +5,8 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface OrderRepo extends CrudRepository<Order, Long> {
 
-    Order findOrderByOrderId(Long orderId);
+    Order findByOrderId(Long orderId);
 
     @Query("SELECT o FROM Order o INNER JOIN o.orderedProducts op WHERE op.product.productName LIKE %:productName%")
-    Iterable<Order> findOrdersByOrderedProductsContaining(String productName);
+    Iterable<Order> findByProductName(String productName);
 }
