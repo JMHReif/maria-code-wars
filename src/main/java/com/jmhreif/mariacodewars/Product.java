@@ -20,9 +20,6 @@ public class Product {
     @NonNull
     private String productName;
 
-    private String quantityPerUnit;
-    private Integer unitsInStock, unitsOnOrder, reorderLevel, discontinued;
-
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties({"product", "orderId", "productId"})
     private List<OrderedProduct> productOrders;

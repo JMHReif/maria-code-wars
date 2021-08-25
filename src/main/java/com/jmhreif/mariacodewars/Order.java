@@ -20,12 +20,7 @@ public class Order {
     @NonNull
     private Long orderId;
 
-    private String customerId;
-    private Integer employeeId;
-    private Date orderDate, requiredDate, shippedDate;
-    private String shipName, shipAddress, shipCity, shipRegion, shipPostalCode, shipCountry;
-    private Integer shipVia;
-    private double freight;
+    private Date orderDate;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnoreProperties({"order", "orderId", "productId"})
