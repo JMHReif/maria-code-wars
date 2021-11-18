@@ -14,6 +14,7 @@ image::src/main/resources/maria-model-aug2021.png[]
 == REST endpoints
 
 * localhost:8080/orders/findbyid?orderId=10564
+* localhost:8080/orders/findbyid?orderId=10414
 * localhost:8080/orders/findbyproduct?productName=choco
 * localhost:8080/orders/findbyproduct?productName=coffee
 * localhost:8080/orders/findbyproduct?productName=chocolade
